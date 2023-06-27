@@ -1,4 +1,4 @@
-package se.ff.bsc;
+package de;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.fluent.Request;

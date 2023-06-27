@@ -1,4 +1,4 @@
-package se.ff.bsc;
+package de;
 
 import au.com.dius.pact.consumer.Pact;
 import au.com.dius.pact.consumer.PactProviderRuleMk2;

@@ -19,7 +19,6 @@ public class TrainContractVerification {
         System.out.println("Result" );
     }
 
-
     @TestTarget
     public final Target target = new HttpTarget(8111);
 }
