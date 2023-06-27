@@ -1,0 +1,72 @@
+{
+    "provider": {
+        "name": "TrainService"
+    },
+    "consumer": {
+        "name": "ClientService"
+    },
+    "interactions": [
+        {
+            "description": "A request to get the arrival time of train",
+            "request": {
+                "method": "GET",
+                "path": "/train/hermanStr/U8"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "number": "string",
+                    "station": "string"
+                },
+                "matchingRules": {
+                    "body": {
+                        "$.station": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.number": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        }
+                    }
+                },
+                "generators": {
+                    "body": {
+                        "$.station": {
+                            "type": "RandomString",
+                            "size": 20
+                        },
+                        "$.number": {
+                            "type": "RandomString",
+                            "size": 20
+                        }
+                    }
+                }
+            },
+            "providerStates": [
+                {
+                    "name": "Arrival of U8 Train"
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "pact-specification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.10"
+        }
+    }
+}
